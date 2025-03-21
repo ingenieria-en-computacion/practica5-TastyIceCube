@@ -1,15 +1,15 @@
 #ifndef __STACK_H__
 #define __STACK_H__
+#include "node.h"
 #include <stdbool.h>
 
-typedef int Data;
 
 typedef struct {
-    Data *data;
-    int top;
+    Node* top= NULL;
+    Node* first = NULL;
 } Stack;
 
-Stack stack_create(int);
+Stack *stack_create();
 void stack_push(Stack*, Data);
 Data stack_pop(Stack*);
 bool stack_is_empty(Stack* );
